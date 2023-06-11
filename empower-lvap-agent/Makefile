@@ -56,11 +56,24 @@ TARGET_CPPFLAGS:= \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 	$(TARGET_CPPFLAGS) \
 
+HOST_CPPFLAGS:= \
+	-I$(STAGING_DIR)/usr/include/libnl-tiny \
+	$(TARGET_CPPFLAGS) \
+
 TARGET_CFLAGS:= \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 	$(TARGET_CFLAGS) \
 
+HOST_CFLAGS:= \
+	-I$(STAGING_DIR)/usr/include/libnl-tiny \
+	$(TARGET_CFLAGS) \
+
 MAKE_FLAGS += \
+	CFLAGS="$(TARGET_CPPFLAGS) $(TARGET_CFLAGS)" \
+	LDFLAGS="$(TARGET_LDFLAGS)" \
+	LIBS="-lnl-tiny" \
+
+HOST_MAKE_FLAGS += \
 	CFLAGS="$(TARGET_CPPFLAGS) $(TARGET_CFLAGS)" \
 	LDFLAGS="$(TARGET_LDFLAGS)" \
 	LIBS="-lnl-tiny" \
