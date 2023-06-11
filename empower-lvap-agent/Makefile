@@ -56,6 +56,10 @@ TARGET_LDFLAGS += \
 	-L$(STAGING_DIR)/usr/lib \
 	-L$(STAGING_DIR)/lib \
 
+HOST_LDFLAGS += \
+	-L$(STAGING_DIR)/usr/lib \
+	-L$(STAGING_DIR)/lib \
+
 TARGET_CPPFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 
