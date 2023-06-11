@@ -10,7 +10,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=empower-lvap-agent
 PKG_VERSION:=20220311
 PKG_RELEASE:=1
-PKG_REV:=2718b0ada83a7eedf1f33598c82b5b064c4fa592
+PKG_REV:=1966314a691a51ca9c3ee3fff3491453bf1fd95c
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=https://github.com/daw1012345/empower-lvap-agent
@@ -65,12 +65,14 @@ TARGET_CPPFLAGS += \
 
 HOST_CPPFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
+	-DIGNORE_LIBNL=1 \
 
 TARGET_CFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 
 HOST_CFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
+	-DIGNORE_LIBNL=1 \
 
 MAKE_FLAGS += \
 	LIBS="-lnl-tiny" \
