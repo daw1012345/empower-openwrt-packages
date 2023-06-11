@@ -28,7 +28,7 @@ define Package/empower-lvap-agent
 	CATEGORY:=Network
 	TITLE:=The EmPOWER Agent
 	MAINTAINER:=Roberto Riggio <roberto.riggio@create-net.org>
-	DEPENDS:=+kmod-tun +libstdcpp +libnl-tiny
+	DEPENDS:=+kmod-tun +libpcap +libstdcpp +libnl-tiny
 	URL:=http://www.read.cs.ucla.edu/
 endef
 
@@ -68,7 +68,7 @@ TARGET_CPPFLAGS += \
 TARGET_CFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 
-MAKE_FLAGS += \
+TARGET_MAKE_FLAGS += \
 	LIBS="-lnl-tiny -lpcap" \
 
 
