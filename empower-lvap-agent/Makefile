@@ -55,10 +55,12 @@ HOST_CONFIGURE_ARGS += \
 TARGET_LDFLAGS += \
 	-L$(STAGING_DIR)/usr/lib \
 	-L$(STAGING_DIR)/lib \
+	-lnl-tiny \
 
 HOST_LDFLAGS += \
 	-L$(STAGING_DIR)/usr/lib \
 	-L$(STAGING_DIR)/lib \
+	-lnl-tiny \
 
 TARGET_CPPFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
@@ -71,12 +73,6 @@ TARGET_CFLAGS += \
 
 HOST_CFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
-
-MAKE_FLAGS += \
-	LIBS="-lnl-tiny" \
-
-HOST_MAKE_FLAGS += \
-	LIBS="-lnl-tiny" \
 
 define Host/Compile
     $(call Host/Install/Default, tools elementmap.xml install)
