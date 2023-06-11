@@ -64,20 +64,15 @@ TARGET_CPPFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 
 HOST_CPPFLAGS += \
-	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 	-DIGNORE_LIBNL=1 \
 
 TARGET_CFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 
 HOST_CFLAGS += \
-	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 	-DIGNORE_LIBNL=1 \
 
 MAKE_FLAGS += \
-	LIBS="-lnl-tiny" \
-
-HOST_MAKE_FLAGS += \
 	LIBS="-lnl-tiny" \
 
 define Host/Compile
