@@ -52,6 +52,10 @@ HOST_CONFIGURE_ARGS += \
 	--enable-empower \
 	--disable-linuxmodule \
 
+TARGET_LDFLAGS += \
+	-L$(STAGING_DIR)/usr/lib \
+	-L$(STAGING_DIR)/lib \
+
 TARGET_CPPFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 
