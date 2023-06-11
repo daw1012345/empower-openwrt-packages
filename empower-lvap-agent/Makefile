@@ -10,7 +10,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=empower-lvap-agent
 PKG_VERSION:=20220311
 PKG_RELEASE:=1
-PKG_REV:=0cf77523372e81194b3d118f11604759cf69f83d
+PKG_REV:=bfac0cbe9a5534222aa24353c7d41d5cf631c72b
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=https://github.com/daw1012345/empower-lvap-agent
@@ -28,7 +28,7 @@ define Package/empower-lvap-agent
 	CATEGORY:=Network
 	TITLE:=The EmPOWER Agent
 	MAINTAINER:=Roberto Riggio <roberto.riggio@create-net.org>
-	DEPENDS:=+kmod-tun +libpcap +libstdcpp
+	DEPENDS:=+kmod-tun +libpcap +libstdcpp +libnl-tiny
 	URL:=http://www.read.cs.ucla.edu/
 endef
 
