@@ -52,28 +52,25 @@ HOST_CONFIGURE_ARGS += \
 	--enable-empower \
 	--disable-linuxmodule \
 
-TARGET_LDFLAGS += \
-	-L$(STAGING_DIR)/usr/lib \
-	-L$(STAGING_DIR)/lib \
+HOST_CPPFLAGS += \
+	-DIGNORE_LIBNL=1 \
 
-HOST_LDFLAGS += \
+HOST_CFLAGS += \
+	-DIGNORE_LIBNL=1 \
+
+TARGET_LDFLAGS += \
 	-L$(STAGING_DIR)/usr/lib \
 	-L$(STAGING_DIR)/lib \
 
 TARGET_CPPFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 
-HOST_CPPFLAGS += \
-	-DIGNORE_LIBNL=1 \
-
 TARGET_CFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 
-HOST_CFLAGS += \
-	-DIGNORE_LIBNL=1 \
-
 MAKE_FLAGS += \
-	LIBS="-lnl-tiny" \
+	LIBS="-lnl-tiny -lpcap" \
+
 
 define Host/Compile
     $(call Host/Install/Default, tools elementmap.xml install)
