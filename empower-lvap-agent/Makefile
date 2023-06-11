@@ -68,7 +68,7 @@ TARGET_CPPFLAGS += \
 TARGET_CFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 
-TARGET_MAKE_FLAGS += \
+MAKE_FLAGS += \
 	LIBS="-lnl-tiny -lpcap" \
 
 
