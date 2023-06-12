@@ -28,7 +28,7 @@ define Package/empower-lvap-agent
 	CATEGORY:=Network
 	TITLE:=The EmPOWER Agent
 	MAINTAINER:=Roberto Riggio <roberto.riggio@create-net.org>
-	DEPENDS:=+kmod-tun +libpcap +libstdcpp +libnl-tiny
+	DEPENDS:=+kmod-tun +libpcap +libstdcpp +libnl-tiny +libexpat
 	URL:=http://www.read.cs.ucla.edu/
 endef
 
