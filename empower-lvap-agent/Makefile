@@ -69,7 +69,7 @@ TARGET_CFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 
 MAKE_FLAGS += \
-	LIBS="-lnl-tiny -lpcap" \
+	LIBS="-lnl-tiny -lpcap -lexpat" \
 
 
 define Host/Compile
